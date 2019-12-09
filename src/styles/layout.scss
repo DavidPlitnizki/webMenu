@@ -1,0 +1,33 @@
+@import './global';
+
+%header-container{
+    width: 100%;
+    height: 5em;
+    position: relative;
+    position: fixed;
+    z-index: 3;
+    border-bottom: 1px solid #000;
+}
+
+.main_container{
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    top: 5em;
+    max-width: 900px;
+}
+
+%menu-container{
+    position: absolute;
+    left: -10em;
+    top: 5em;
+    width: 10em;
+    height: calc(100% - 5em);
+    transform: translateX(0em);
+    position: fixed;
+}
+
+body{
+    background-color: $primary_color_6;
+}
+

@@ -1,0 +1,16 @@
+@import '../../styles/global';
+@import '../../styles/layout';
+
+.container{
+    @extend %menu-container;
+    background-color: $primary_color_2;
+    transition: transform $transition_menu_1;
+}
+
+.opened{
+    transform: translateX(100%);
+}
+
+.closed{
+    transform: translateX(calc(0% - 1em));
+}

@@ -1,0 +1,36 @@
+
+.items_container{
+    width: 100%;
+    position: relative;
+    height: 3em;
+    background-image: url(../../assets/bg_item.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: .1em;
+    border: solid 2px rgba(0,0,0,.75);
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px .6em .2em rgba(0,0,0,0.75);
+}
+
+
+.items_container .item_img{
+    width: 3em;
+    height: 100%;
+    margin-left: .5em;
+}
+
+.items_container .item_img img{
+    width: 3em;
+    height: 2em;
+}
+
+.items_container .item_img .title{
+    font-size: .5em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -.2em;
+    white-space: nowrap;
+}

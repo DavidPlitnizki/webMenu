@@ -1,0 +1,57 @@
+@import '../../styles/global';
+
+.item_container{
+    width: 7em;
+    background-color: $primary_color_3;
+    flex-grow: 1;
+    margin: 1em;
+    border-radius: .5em;
+    border: .1em solid #000;
+    box-shadow: .2em .2em .7em 0em rgba(0,0,0,0.75);
+    background-image: url(../../assets//bg_item.jpg);
+    background-size: 100%;
+    transition: transform .1s;
+    cursor: pointer;
+}
+
+.item_container:active{
+    transform: translateY(.5em);
+}
+
+.item_container .img_container{
+   position: relative;
+   width: 5em;
+   height: 5em;
+   margin: 0 auto;
+   background-image: url(../../assets/item_pattern.png);
+   background-size: 100%;
+   border-radius: 999px;
+}
+
+.item_container .img_container img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.item_container .title{
+    width: 100%;
+    text-align: center;
+    padding-bottom: .3em;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-shadow: .3em .3em .1em rgba(0, 0, 0, .5);
+}
+
+
+@media only screen and (min-width: 900px){
+    .item_container{
+        width: 100%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        max-width: 900px;
+    }
+}
