@@ -10,20 +10,24 @@ const Header = lazy(() => import('./Header'));
 
 class HeaderContainer extends React.Component{
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        window.addEventListener('scroll',this.scrollEffect);
-        this.state={
+        window.addEventListener('scroll', this.scrollEffect);
+        this.state = {
             anim: false
         }
     }
+
+    shouldComponentUpdate(prevState, nextState) {
+        return this.state.anim !== nextState.anim;
+    }
+
     openMenu = () => {
         this.props.onSetOpenMenu(!this.props.menu_is_open);
     }
 
-    scrollEffect =(e)=>{
-        console.log('effect: ',window.scrollY);
+    scrollEffect = (e) => {
         if(window.scrollY > 50){
             this.setState({
                 anim: true
@@ -38,7 +42,6 @@ class HeaderContainer extends React.Component{
     }
 
     render(){
-
         const cls = (this.state.anim) ? styles.anim : '';
         const header_shadow_anim = (this.state.anim) ? styles.header_anim : '';
 
