@@ -15,6 +15,9 @@ class RootRouter extends React.Component {
 
     constructor(props){
         super(props);
+    }
+
+    componentDidMount() {
         this.props.onSendInitData();
     }
     
