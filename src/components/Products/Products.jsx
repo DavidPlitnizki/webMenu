@@ -18,8 +18,8 @@ class Products extends React.Component{
     }
 
     orderProduct=(item)=>{
-        let order = Object.assign(item,{id_item: Math.floor(uniqNumber()).toString()});
-        this.props.onSelectItemForOrder(item);
+        const order = Object.assign(item,{id_item: Math.floor(uniqNumber()).toString()});
+        this.props.onSelectItemForOrder(order);
     }
 
     returnToMain=()=>{
@@ -28,7 +28,7 @@ class Products extends React.Component{
 
     render(){
         
-        let selectedObj = this.setCategoryTitle(this.props.categories);
+        const selectedObj = this.setCategoryTitle(this.props.categories);
         
         return(
             <div>

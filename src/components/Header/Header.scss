@@ -24,31 +24,3 @@
 .container .logo.anim{
     transform: translateX(-50%) rotateY(360deg);
 }
-
-.container .menu{
-    position: relative;
-    width: 2em;
-    height: 2em;
-    margin-left: .4em;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    transition: background-image $transition_menu_1;
-    animation: anim_menu_icon $transition_menu_1;
-    cursor: pointer;
-}
-
-.menu_is_opened{
-    background-image: url(../../assets/close_menu.png);
-}
-.menu_is_closed{
-    background-image: url(../../assets/menu.png);
-}
-
-@keyframes anim_menu_icon {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import ListCategories from '../ListCategories/ListCategories';
 import ListServing from '../ListServing/ListServing';
 import {selectItemForOrder,sendInitData} from '../../action_creators/index';

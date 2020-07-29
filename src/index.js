@@ -4,7 +4,7 @@ import styles from './styles/reset.scss';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
-import RootRouter from './components/Root/RootRouter.js';
+import RootRouter from './router';
 import customMiddleware from './middleware/index.js';
 // import { syncHistoryWithStore } from 'react-router-redux';
 

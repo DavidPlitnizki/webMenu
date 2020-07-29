@@ -1,5 +1,5 @@
 export const OPEN_MENU = 'OPEN_MENU';
-export const setOpenMenu =({menu_state})=> dispatch=>{
+export const setOpenMenu =(menu_state)=> dispatch=>{
     dispatch({
         type: OPEN_MENU,
         payload: {menu_state}

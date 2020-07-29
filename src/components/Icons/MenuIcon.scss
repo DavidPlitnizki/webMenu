@@ -1,0 +1,45 @@
+.menu{
+    position: relative;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: .4em;
+        &:hover {
+            cursor: pointer;
+        }
+}
+
+.menu .line {
+    display: block;
+    position: relative;
+    width: 2rem;
+    height: .2rem;
+    background-color: #000;
+    transform-origin: left;
+    transition: opacity .25s, transform .25s;
+}
+
+.menu_is_closed .line{
+    &:nth-child(1) {
+        transform: rotate(0deg);
+    }
+    &:nth-child(2) {
+        opacity: 1;
+    }
+    &:nth-child(3) {
+        transform: rotate(0deg);
+    }
+}
+.menu_is_opened .line{
+    &:nth-child(1) {
+        transform: rotate(41deg);
+    }
+    &:nth-child(2) {
+        opacity: 0;
+    }
+    &:nth-child(3) {
+        transform: rotate(-41deg);
+    }
+}

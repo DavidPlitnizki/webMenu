@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Serving.scss';
 
-import CounterOrders from '../Buttons/CounterOrders';
-
 
 const Item = (props) => {
     return(
