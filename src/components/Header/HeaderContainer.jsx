@@ -22,7 +22,7 @@ const HeaderContainer = (porps) => {
 
     const scrollEffect = useCallback((e) => {
         (window.scrollY > 50) ? setAnim(true) : setAnim(false);
-    },[]);
+    },[window.scrollY]);
 
     const menuHandler = useCallback((menu_state) => {
         dispatch(setOpenMenu(menu_state));

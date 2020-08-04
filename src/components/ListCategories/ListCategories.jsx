@@ -6,14 +6,14 @@ import Category from '../Category/Category';
 
 
 
-const ListCategories = (props) => {
+const ListCategories = ({categories, selectCategory}) => {
 let items;
 
-    if (props.categories){
-        items = props.categories.map((item)=>{
+    if (categories.length > 0){
+        items = categories.map((item)=>{
             return( <Link to={"category/"+item.id} key={item.id} className={styles.textLinks}>
-                <Category  item={item} callBackSelectItem={props.selectCategory} />
-        </Link>)
+                        <Category  item={item} callBackSelectItem={selectCategory} />
+                    </Link>)
            
         });
     }

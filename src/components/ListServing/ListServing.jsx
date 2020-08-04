@@ -7,15 +7,15 @@ import AddBtn from '../Buttons/AddBtn';
 
 
 
-const ListServing=(props)=>{
+const ListServing =(props)=> {
     
     let filtredCategory = undefined;
     let filtredItems = 'COMING SOON!!!';
 
    
-const orderItem =(item)=>{
-    props.onOrderItem(item);
-}
+    const orderItem =(item)=>{
+        props.onOrderItem(item);
+    }
 
 
     filtredCategory = props.items.filter((item)=>{
@@ -31,23 +31,23 @@ const orderItem =(item)=>{
     }
     
     return(
-        <div className={styles.container}>
+            <div className={styles.container}>
 
-<div className={styles.title_wrapper}>
-    <div className={styles.imgBack} onClick={props.onBack} />
-    <div className={styles.imgCat}>
-        <img src={props.titleImg} />
-    </div>
-    <div className={styles.title}>{props.title}</div>
-</div>
+                <div className={styles.title_wrapper}>
+                    <div className={styles.imgBack} onClick={props.onBack} />
+                    <div className={styles.imgCat}>
+                        <img src={props.titleImg} />
+                    </div>
+                    <div className={styles.title}>{props.title}</div>
+                </div>
 
-<div className={styles.content}>
-    {filtredItems}
-</div>
+                <div className={styles.content}>
+                    {filtredItems}
+                </div>
 
 
-</div>
-    )
+            </div>
+            )
 }
 
 // ListServing.propTypes = {

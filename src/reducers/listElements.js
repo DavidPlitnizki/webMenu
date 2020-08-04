@@ -1,8 +1,8 @@
 import {FETCH_INIT_DATA} from '../action_creators/index';
 
 let initialState = {
-    categories: false,
-    items: false
+    categories: [],
+    items: []
 }
 
 export default function listElements(state = initialState,action){

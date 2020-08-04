@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './About.scss';
 
 
-const About = props => {
+const About = () => {
 
 
     return(

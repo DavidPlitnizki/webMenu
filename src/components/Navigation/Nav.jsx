@@ -12,7 +12,7 @@ const Nav = (props) =>{
                 <li><Link to="/Order">Order</Link></li>
                 <li><Link to="/About">About</Link></li>
                 <li><Link to="/Contact">Contact</Link></li>
-            </ul>
+            </ul>``
         </div>
     )
 }
