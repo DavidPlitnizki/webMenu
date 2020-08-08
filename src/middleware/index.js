@@ -9,7 +9,6 @@ const getItems = ()=> {
 }
 
 const customMiddleware = store => next => action =>{
-     console.log(action);
     if(action.type == SEND_INIT_DATA){
         let categories = false;
         let items = false;

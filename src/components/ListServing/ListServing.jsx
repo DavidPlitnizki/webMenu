@@ -50,12 +50,6 @@ const ListServing =(props)=> {
             )
 }
 
-// ListServing.propTypes = {
-//     onBack: PropTypes.func.isRequired,
-//     title: PropTypes.string.isRequired,
-//     id: PropTypes.number.isRequired,
-//     onAddItem: PropTypes.func.isRequired
-// }
 
 export default ListServing;
 

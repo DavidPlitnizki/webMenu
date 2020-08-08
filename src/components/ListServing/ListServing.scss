@@ -5,13 +5,16 @@
     width: 100%;
     height: 5em;
     background-image: url(../../assets/bg_item.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-position: 0;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0.2em 0.2em 0.7em 0em rgba(0, 0, 0, 0.75);
+    animation: bgAnim 60s infinite forwards;
     
 }
 
@@ -51,4 +54,31 @@
     font-size: 3em;
     font-weight: bold;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
 }
+
+
+@media only screen and (min-width: 800px){
+    .content{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+@keyframes bgAnim {
+    0% {
+        background-position-x: 0%;
+    }
+
+    50% {
+        background-position-x: 100%;
+    }
+
+    100% {
+        background-position-x: 0%;
+    }
+}
+
