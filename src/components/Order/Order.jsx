@@ -1,53 +1,30 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styles from './Order.scss';
-
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Serving from '../Serving/Serving';
 import {removeItemFromOrder} from '../../action_creators/index';
 import RemoveBtn from '../Buttons/RemoveBtn';
 
 
-class Order extends React.Component{
-    constructor(props){
-        super(props);
-        this.emptyText = 'EMPTY!!!';
-    }
-    removeItem=({id})=>{
-        this.props.onRemoveItemForOrder(id);
+const Order =()=> {
+    const [text, setText] = useState('EMPTY!!!');
+    const orders = useSelector(state => state.order);
+    const dispatch = useDispatch();
+
+    const removeItem=({id})=>{
+        dispatch(removeItemFromOrder(id));
     }
 
-    render(){
         return(
             <div className={styles.container}>
-               {this.props.orders.length > 0 ? this.props.orders.map((item,i)=>(
-                <Serving key={i} id={item.id} title={item.title} img={item.img} >
-                    <RemoveBtn clickHandle={this.removeItem} item={item} />
+               {orders.length > 0 ? orders.map((item,i)=>(
+                <Serving key={i} id={item.id} title={item.title} img={item.url_img} >
+                    <RemoveBtn clickHandle={removeItem} item={item} />
                 </Serving>
-            )) : this.emptyText}
+            )) : text}
             </div> 
            
         )
-    }
 }
 
-
-const mapStateToProps = (state,props) => {
-    return{
-      orders: state.order,
-      items: state.listElements.items
-    }
-  };
-  
-  const mapDispatchToProps = dispatch => ({
-    onRemoveItemForOrder: (id)=>{
-        dispatch(removeItemFromOrder(id));
-    }
-  });
-
-export default connect(mapStateToProps,mapDispatchToProps)(Order);
-
-
-
-
-// removeFromOrder={this.removeFunc}
+export default Order;

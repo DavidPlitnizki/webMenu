@@ -1,66 +1,44 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ListServing from '../ListServing/ListServing';
 import { selectItemForOrder } from '../../action_creators';
 import {uniqNumber} from '../../helpers/util';
 
-class Products extends React.Component{
-    constructor(props){
-        super(props);       
-    }
+const Products = props => {
+    const items = useSelector(state => state.listElements.items);
+    const categories = useSelector(state => state.listElements.categories);
+    const dispatch = useDispatch();
 
-    setCategoryTitle(catArr){
+   const setCategoryTitle = (catArr) => {
         if(!catArr) return false;
 
        return catArr.filter((item)=>{
-            return item.id == this.props.match.params.id;
+            return item.id == props.match.params.id;
         })
     }
 
-    orderProduct=(item)=>{
+    const orderProduct =(item)=> {
         const order = Object.assign(item,{id_item: Math.floor(uniqNumber()).toString()});
-        this.props.onSelectItemForOrder(order);
+        dispatch(selectItemForOrder(order));
     }
 
-    returnToMain=()=>{
-        this.props.history.goBack();
+    const returnToMain =()=> {
+        props.history.goBack();
     }
 
-    render(){
         
-        const selectedObj = this.setCategoryTitle(this.props.categories);
-        
-        return(
-            <div>
-               {   (selectedObj && selectedObj.length > 0) ?
-                   <ListServing items={this.props.items} id={this.props.match.params.id} 
-                        title={selectedObj[0].title} titleImg={selectedObj[0].img_url}
-                        onOrderItem={this.orderProduct} onBack={this.returnToMain}  />
-                        :
-                        'loading'
-                }
-            </div>
-        )
-    }
-}
-
-const mapStateToProps = (state, props) => {
+    const selectedObj = setCategoryTitle(categories);
     
-
-    return{
-      items: state.listElements.items,
-      categories: state.listElements.categories
-    }
-  };
-  
-  const mapDispatchToProps = dispatch => ({
-    onSelectItemForOrder: (item)=>{
-        let data = {
-            id: item.id_item,
-            title: item.title,
-            img: item.url_img
-        }
-        dispatch(selectItemForOrder(data));
-    }
-  });
-export default connect(mapStateToProps,mapDispatchToProps)(Products);
+    return(
+        <div>
+            {   (selectedObj && selectedObj.length > 0) ?
+                <ListServing items={items} id={props.match.params.id} 
+                    title={selectedObj[0].title} titleImg={selectedObj[0].img_url}
+                    onOrderItem={orderProduct} onBack={returnToMain}  />
+                    :
+                    'loading'
+            }
+        </div>
+    )
+}
+export default Products;

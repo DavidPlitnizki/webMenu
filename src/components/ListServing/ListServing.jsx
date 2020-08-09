@@ -24,7 +24,7 @@ const ListServing =(props)=> {
     
     if(filtredCategory.length > 0){
         filtredItems = filtredCategory[0].items.map((item)=>(
-                <Serving key={item.id_item} title={item.title}  img={item.url_img} key={item.id_item}>
+                <Serving key={item.id_item} title={item.title} img={item.url_img} key={item.id_item}>
                     <AddBtn clickHandle={orderItem} item={item} />
                 </Serving>
             ));
@@ -51,6 +51,6 @@ const ListServing =(props)=> {
 }
 
 
-export default ListServing;
+export default React.memo(ListServing);
 
 
