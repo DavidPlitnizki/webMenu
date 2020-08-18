@@ -1,8 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
-import {sendInitData} from '../action_creators/index';
 import App from '../App';
 import About from '../components/About/About';
 import Main from '../components/Main/Main';
@@ -11,19 +9,10 @@ import Contact from '../components/Contact/Contact';
 import Order from '../components/Order/Order';
 
 
-class RootRouter extends React.Component {
+const RootRouter = (props) => {
 
-    constructor(props){
-        super(props);
-    }
-
-    componentDidMount() {
-        this.props.onSendInitData();
-    }
-    
-    render(){
         return(
-            <Provider store={this.props.store}>
+            <Provider store={props.store}>
                 <Router>
                     <App>
                     <Switch>
@@ -37,16 +26,8 @@ class RootRouter extends React.Component {
                 </Router>
             </Provider>
         )
-    }
     
 };
-  
-  const mapDispatchToProps = dispatch => ({
-   
-    onSendInitData: ()=>{
-        dispatch(sendInitData());
-    }
-  });
 
 
-export default connect(null,mapDispatchToProps)(RootRouter);
+export default RootRouter;

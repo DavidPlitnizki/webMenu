@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import styles from './MenuIcon.scss';
 
-const MenuIcon = ({ openMenu }) => {
-    const [menu, SetMenu] = useState(styles.menu_is_closed);
+const MenuIcon = ({ openMenu, menuState }) => {
+    const [menu, SetMenu] = useState('');
+
+    useEffect(useCallback(()=> {
+        const style_menu = (menuState) ? styles.menu_is_opened : styles.menu_is_closed;
+        SetMenu(style_menu);
+    }))
 
     const toggleIcon =()=> {
-        const menu_state = (menu === styles.menu_is_closed) ? styles.menu_is_opened : styles.menu_is_closed;
-        SetMenu(menu_state);
         openMenu();
     }
 

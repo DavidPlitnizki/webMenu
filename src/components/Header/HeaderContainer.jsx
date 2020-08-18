@@ -1,5 +1,4 @@
 import React, {lazy, Suspense, useState, useEffect, useCallback} from 'react';
-import PropTypes from 'prop-types';
 import styles from './HeaderContainer.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import {setOpenMenu} from '../../action_creators/index';
@@ -41,6 +40,7 @@ const HeaderContainer = (porps) => {
             <Suspense fallback={<div>Loading...</div>}>
                 <Header
                     openMenuCallback={openMenu}
+                    menuState={menu_is_open}
                 />
                 </Suspense>
             </div>   

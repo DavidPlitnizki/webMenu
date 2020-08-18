@@ -13,7 +13,7 @@ const ListServing =(props)=> {
     let filtredItems = 'COMING SOON!!!';
 
    
-    const orderItem =(item)=>{
+    const orderItem =(item)=> {
         props.onOrderItem(item);
     }
 

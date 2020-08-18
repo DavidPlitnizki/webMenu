@@ -11,8 +11,8 @@ const Order =()=> {
     const orders = useSelector(state => state.order);
     const dispatch = useDispatch();
 
-    const removeItem=({id})=>{
-        dispatch(removeItemFromOrder(id));
+    const removeItem=(item)=>{
+        dispatch(removeItemFromOrder(item.private_id));
     }
 
         return(

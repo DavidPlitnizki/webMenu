@@ -44,3 +44,11 @@ export const selectCategory = (data) => dispatch => {
         payload: data
     })
 }
+
+export const LOGIN = 'LOGIN';
+export const login = ({email, password}) => dispatch => {
+    dispatch({
+        type: LOGIN,
+        payload: {email,password}
+    })
+}

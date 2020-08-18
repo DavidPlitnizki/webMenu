@@ -7,7 +7,7 @@ export default function order(state = [],action){
         return new_state = [...state, action.payload];
     } else if(action.type === 'REMOVE_FROM_ORDER'){
         let new_state = [];
-        new_state = state.filter(item => item.id != action.payload);
+        new_state = state.filter(item => item.private_id != action.payload);
         return new_state;
     }
     return state;

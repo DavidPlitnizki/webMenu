@@ -1,4 +1,4 @@
-import {SEND_INIT_DATA,fetchInitDataSuccess} from '../action_creators/index.js';
+import {SEND_INIT_DATA,fetchInitDataSuccess, LOGIN} from '../action_creators/index.js';
 import axios from 'axios';
 
 const getCategories = ()=>{
@@ -6,6 +6,11 @@ const getCategories = ()=>{
 }
 const getItems = ()=> {
     return axios.get('/data/item.json');
+}
+
+const validateUser = ({email, password}) => {
+    return (email == 'q@q' && password == 1);
+    
 }
 
 const customMiddleware = store => next => action =>{
@@ -22,6 +27,10 @@ const customMiddleware = store => next => action =>{
             })).catch(()=>{
                 console.log("error")
             })
+    }if(action.type === LOGIN) {
+        const user = validateUser(action.payload);
+        if(user) next(action);
+        
     }else{
         next(action);
     }
