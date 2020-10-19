@@ -15,15 +15,12 @@ const Item = (props) => {
                     </section>
                     <section className={styles.right}>
                         <div className={styles.title}>{props.title}</div>
-                        <div className={styles.price}>250$</div>
+                        
+                        <div className={styles.price}>PRICE - 250$</div>
                     </section>
                 </div>
-                <div className={styles.back}>
-                        <p className={styles.desc}>
-                            Steamed salamon - test test test
-                        </p>
-                        {props.children}
-                </div>
+
+                    {props.children}
             </div>
         </React.Fragment>
     )
@@ -35,3 +32,8 @@ Item.propTypes = {
 }
 
 export default Item;
+
+
+// <p className={styles.desc}>
+//                             Steamed salamon - test test test
+//                         </p>

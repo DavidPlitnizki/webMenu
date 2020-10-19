@@ -15,12 +15,12 @@ const Header = ({ openMenuCallback, menuState}) => {
             <div className={styles.logo}></div>
             <div className={styles.user_info}>
             {
-                (isAuthenticated) ?
-                    '' :
-                <React.Fragment>
-                    <span><Link to="/login">Log In</Link></span>
-                    <span><Link to="/signin">Sign In</Link></span>
-                </React.Fragment>
+                // (isAuthenticated) ?
+                //     '' :
+                // <React.Fragment>
+                //     <span><Link to="/login">Log In</Link></span>
+                //     <span><Link to="/signin">Sign In</Link></span>
+                // </React.Fragment>
             }
                
             </div>
