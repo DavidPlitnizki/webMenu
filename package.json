@@ -37,7 +37,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "npm": "^6.10.2",
     "react": "^16.6.0",
     "react-addons-css-transition-group": "^15.6.2",
